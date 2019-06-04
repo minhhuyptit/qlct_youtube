@@ -1,6 +1,11 @@
 <?php
 
 use App\Member;
+use App\Team;
+use App\TeamMember;
+use App\Candidate;
+use App\CandidateSkill;
+use App\CandidateContact;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +22,6 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-    $elm = Member::find(1);
-    return $elm->interviewer_comment;
+    $elm = CandidateSkill::find(1);
+    return $elm->skill;
 });

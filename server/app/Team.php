@@ -14,4 +14,16 @@ class Team extends Model
         'pivot'
     ];
 
+    public function members(){
+        return $this->belongsToMany(Member::class, TeamMember::class, 'team_id', 'member_id');
+    }
+
+    public function team_members(){
+        return $this->hasMany(TeamMember::class, 'team_id', 'id');
+    }
+
+    public function member_leader(){
+        return $this->belongsTo(Member::class, 'leader', 'id');
+    }
+
 }
