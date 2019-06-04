@@ -1,5 +1,6 @@
 <?php
 
+use App\Member;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +14,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('test', function () {
+    $elm = Member::find(1);
+    return $elm->interviewer_comment;
 });
