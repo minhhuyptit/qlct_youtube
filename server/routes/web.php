@@ -6,6 +6,10 @@ use App\TeamMember;
 use App\Candidate;
 use App\CandidateSkill;
 use App\CandidateContact;
+use App\Interview;
+use App\Interviewer;
+use App\InterviewerComment;
+use App\Configuration;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +26,6 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-    $elm = CandidateSkill::find(1);
-    return $elm->skill;
+    $elm = Configuration::find(25);
+    return $elm->candidate_use_skills;
 });

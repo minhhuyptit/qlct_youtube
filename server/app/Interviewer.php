@@ -13,5 +13,13 @@ class Interviewer extends Model
     public function member(){
         return $this->belongsTo(Member::class, 'member_id', 'id');
     }
+
+    public function interview(){
+        return $this->belongsTo(Interview::class, 'interview_id', 'id');
+    }
+
+    public function interviewer_comments(){
+        return $this->hasMany(InterviewerComment::class, 'interviewer_id', 'id');
+    }
     
 }

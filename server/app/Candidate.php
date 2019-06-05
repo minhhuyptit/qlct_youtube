@@ -10,6 +10,10 @@ class Candidate extends Model
     protected $fillable = ['id','del_flag','name','is_male','birthday','cv','is_passed',
     'university_id','created_by','modified_by','created_at','updated_at'];
 
+    protected $hidden = [
+        'pivot'
+    ];
+    
     public function skills(){
         return $this->belongsToMany(Configuration::class, CandidateSkill::class, 'candidate_id', 'skill_id');
     }
